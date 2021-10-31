@@ -1,0 +1,91 @@
+---
+title: "Practica1FundamentosEstadistica"
+author: "MDS"
+date: "31/10/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+#Practica Variable Aleatoria Unidimensional
+
+#Ejercicio1
+integrate(function(x)(25-x),5,25)
+#Eso me da 200 y yo necesito que sea 1 para que realmente sea una funci?n 
+#de densidad. Asi que K (mi constante) tiene que ser 1/200
+#k=0,005
+
+integrate(function(x)(0.125-0.005*x),5,25)
+
+#Plotarfunccion
+f <- function(x)(0.125-0.005*x)
+x <- seq(5, 25, by =5)
+y <- sapply(x, f)
+plot(x,y, type = "l", axes = FALSE, lwd = 2,
+     ylab = "F(x)", main = "Funcion de densidad", xlim = c(0,30),ylim=c(0,0.2))
+axis(1, pos = 0)
+axis(2, pos = 0)
+
+
+#Ejercicio2
+f <- function(x)(0.125-0.005*x)
+integrate(f,20,25)
+#R=0.0625, Aproximadamente un 6%.
+
+#Ejercicio3
+f2<- function(x) x*f(x)
+integrate(f2,5,25)
+#El descuento medio que se espera aplicar es de aproximadamente 11,67%.
+
+#Ejercicio4
+f3<- function(x) (x^2)*f(x)
+esperanzacont <- integrate(f2,5,25)
+integrate(f3,5,25)$value - esperanzacont$value^2
+#La varianza de la variable aleatoria es de aproximadamente 22,22.
+
+#Ejercicio5
+#TeoremadeChebyshevf 
+
+
+
+#Ejercicio6
+#Moda= donde el valor de la funccion densidad toma un maximo
+f7 <- function(x)(0.125-0.005*x)
+#Funcion decrescente, moda es x=5
+
+#Ejercicio7
+midensidad <- function(x)(0.125-0.005*x)
+midistribucion <- function(q)
+  integrate(function(x) midensidad(x), 5, q)[[1]]
+midistribucion(1)
+micuantil <- function(p) uniroot(function(x) 
+  midistribucion(x) - p, c(5, 25))[[1]]
+micuantil(0.5)
+
+#10.86
+
+
+
