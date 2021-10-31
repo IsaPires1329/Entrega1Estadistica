@@ -1,15 +1,14 @@
-## Including Plots
+# **Práctica Variable Aleatoria Unidimensional**
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+*Master en Data Science URJC - Emikio López Cano
+Alumna: Isabela Ignácio DAlberto*
 
 
-#Practica Variable Aleatoria Unidimensional
+**Ejércicio Descuentos:**
+*Una empresa de servicios de Internet quiere hacer una campaña para aplicar entre un 5% y un 25% de descuento a sus clientes de forma aleatoria y lineal, y entonces la probabilidad de que un cliente reciba un determinado descuento se puede modelizar mediante la siguiente función de densidad:
+f(x) = k(25 − x), si 5 ≤ x ≤ 25
+       0          resto
+
 
 #Ejercicio1
 integrate(function(x)(25-x),5,25)
