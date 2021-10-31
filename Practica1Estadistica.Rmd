@@ -2,7 +2,7 @@
 
 *Master en Data Science URJC - Emikio López Cano
 Alumna: Isabela Ignácio DAlberto*
-
+la
 
 **Ejércicio Descuentos:**
 *Una empresa de servicios de Internet quiere hacer una campaña para aplicar entre un 5% y un 25% de descuento a sus clientes de forma aleatoria y lineal, y entonces la probabilidad de que un cliente reciba un determinado descuento se puede modelizar mediante la siguiente función de densidad:
